@@ -29,6 +29,12 @@
         font-size: 30px;
     }
 
+    .title3{
+        color: white;
+        text-align: center;
+        font-size: 25px;
+    }
+
     .par{
         color: white;
         text-align: center;
@@ -57,6 +63,11 @@
         padding: 20px, 40px;
     }
     
+    .bull{
+        margin: 0;
+        text-align: left;
+
+    }
 
     </style>
 </head>
@@ -67,12 +78,12 @@
         <div class="border">
             <div class="title2"><h2>Cybersecurity Objectives</h2></div>
             <div class="content-section" style="display: flex; gap: 20px; align-items: flex-start;">
-                <div class="par" style="flex: 1;">
+                <div class="par bull" style="flex: 1;">
                     <p>Cybersecurity has 3 complementary objectives (CIA Triad):</p>
                     <ul>
                         <li><em>Confidentiality:</em> Ensures that unauthorized individuals are not able to gain access to sensitive information. Ex. Firewalls, access control lists, and encryptions.</li>
-                        <li><em>Integrity:</em> Ensures that there are no unauthorized modifications to information or systems, either intentionally or unintentionally. Ex. Hashing and integrity monitoring</li>
-                        <li><em>Availability:</em> Ensures that information and systems are ready to meet the needs of legitimate users at the time those users request them. Ex. Fault tolerance, clustering, and backups</li>
+                        <li><em>Integrity:</em> Ensures that there are no unauthorized modifications to information or systems, either intentionally or unintentionally. Ex. Hashing and integrity monitoring.</li>
+                        <li><em>Availability:</em> Ensures that information and systems are ready to meet the needs of legitimate users at the time those users request them. Ex. Fault tolerance, clustering, and backups.</li>
                     </ul>
                     <p><em>Nonrepudiation:</em> Someone performing an action cannot deny it later after doing the action. Ex digital footprint. Nonrepudiation is not part of the CIA Triad but is still very important and is considered an objective.</p>
                 </div>
@@ -84,12 +95,66 @@
 
     <div class="border">
         <div class="title2"><h2>Data Breach Risks</h2></div>
-        <div class="par"><p>Security incidents happen when an organization has a breach. This can be from malicious activity, accident, or from nature.</p></div>
+        <div class="par bull"><p>Security incidents happen when an organization has a breach. This can be from malicious activity, accident, or from nature.</p></div>
+        <hr style="border: none; border-top: 10px dashed grey;">
+        <div class="title3"><h3>DAD Triad</h3></div>
+        <div class="content-section" style="display: flex; gap: 10px; align-items: flex-start;">
+            <div class="par bull" style="flex: 1;">
+                <p>DAD Triad explains the 3 key threats to cybersecurity efforts:</p>
+                <ul>
+                    <li><em>Disclosure:</em> Is the exposure of data to unauthorized individuals (also known as data loss). This can lead to data exfiltration (the unauthorized transfer of data from a secure system to an external destination). Violates the Confidentiality principle.</li>
+                    <li><em>Alteration:</em> Is the unauthorized modification of information and is a violation of the principle of integrity.</li>
+                    <li><em>Denial:</em> Is the Disruption of an authorized user’s legitimate access to information and violates the principle of availability.</li>
+                </ul>
+            </div>
+            <div class="image" style="flex: 0 0 auto;">
+                <img src="Sec+ Images/DAD Triad.jpg" style="width: 431px; height: auto;">
+            </div>
+        </div>
+        <hr style="border: none; border-top: 10px dashed grey;">
+        <div class="title3"><h3>Breach Impact</h3></div>
+        <div class="par bull">
+            <ul>
+                <li><em>Financial Risk:</em>Risk of monetary damage.</li>
+                <li><em>Reputation Risk:</em>Risk of negative publicity from customers, employees, suppliers, and other stakeholders.</li>
+                <li><em>Strategic Risk:</em>Risk of becoming less effective to meet goals and objectives.</li>
+                <li><em>Operational Risk:</em>Risk an organization’s ability to carry out day-to-day functions.</li>
+                <li><em>Compliance Risk:</em>Risk of an organization runs into legal or regulatory requirements (legal issues, gets sued in court)</li>
+            </ul>
+        </div>
+
     </div>
 
     <div class="border">
-        <div class="title2"><h2></h2></div>
+        <div class="title2"><h2>Implementing Security Controls</h2></div>
+        <div class="par"><p>Security controls are specific measures that fulfill the security objectives of an organization.</p></div>
+        <hr style="border: none; border-top: 10px dashed grey;">
+        <div class="title3"><h3>Gap Analysis</h3></div>
+        <div class="par"><p>Evaluates security controls. During Gap Analysis control objectives of an organization, system, or service are reviewed and then examine the controls designed to achieve those objectives. If there are any cases where the controls do not meet the control objective that is a gap. Gaps should be considered as potential risks and remediated as time and resources permit.</p></div>
+        <hr style="border: none; border-top: 10px dashed grey;">
+        <div class="title3"><h3>Security Control Categories</h3></div>
+        <div class="par bull">
+            <ul>
+                <li><em>Technical controls:</em> Enforces Confidentiality, integrity and availability in the digital space. Ex. Firewall rules, access control lists, intrusion prevention systems, and encryption.</li>
+                <li><em>Operational controls:</em> Include the process that we put in place to manage technology in a secure manner. Includes user access reviews, log monitoring, and vulnerability management.</li>
+                <li><em>Managerial Controls:</em> Are procedural mechanisms that focus on the mechanics of the risk management process. Ex. Periodic risk assessments, security planning exercises, and incorporation of security into organization’s change management, service acquisition, and </li>
+                <li><em>Physical Controls:</em> Impact from the outside world. Ex. Fences, locks, fire suppression systems, alarms, etc.</li>
+            </ul>
+        </div>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     </div>
+
 
 
 
