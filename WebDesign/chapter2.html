@@ -56,14 +56,81 @@
             font-size: 40px;
             padding: 20px, 40px;
         }
+
+        .collapsible {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    margin: 0;
+    display: block;
+}
+
+    .active, .collapsible:hover {
+    background-color: #555;
+}
+
+    .content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    margin: 0;
+}
+
     
-        </style>
+</style>
 </head>
 <body>
     <div class="background">
         <div class="title"><h1>Chapter 2:</h1></div>
-        <div class="title2"><h1>Topic 1</h1></div>
-        <div class="par"><p>cybercybercyberbinmkuiyvucvybijihuiyvutyuhiuiyvhiivybjukuhuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuubihkkkkkkkkkkkkkkkkk</p></div>
+
+        <button type="button" class="collapsible">Classifying Cybersecurity Threats</button>
+        <div class="content">
+            <ul>
+                <li>internal vs. External</li>
+                <li>Resources/Funding</li>
+                <li>Intent/Motivation</li>
+            </ul>
+            <p>White hat hackers have permission. Black hat hackers don’t. Grey hats are semi-authorized.</p>
+            <p>Zero-Day Attacks: a cyberattack that exploits software, firmware, or hardware vulnerability before a patch is available</p>
+        </div><button type="button" class="collapsible">Threat Actors</button>
+        <div class="content">
+            <ul>
+                <li>Hacktivists</li>
+                <li>Cybercriminals</li>
+                <li>Nation-State Actors</li>
+                <li>Insider Threats</li>
+            </ul></div>
+
+            <script>
+                var coll = document.getElementsByClassName("collapsible");
+                var i;
+                
+                for (i = 0; i < coll.length; i++) {
+                    coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.display === "block") {
+                        content.style.display = "none";
+                    } else {
+                        content.style.display = "block";
+                    }
+                });
+                }
+                </script>
+        
+        
+        
+        
+        
+        
+        
         <div><button class="but"onclick="window.location.href='HomePage.html'">Home</button></div>
 
     </div>
