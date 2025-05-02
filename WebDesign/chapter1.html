@@ -23,10 +23,13 @@
             font-size: 40px;
         }
     
-        .title3{
+        .title3 h3{
             color: white;
             text-align: center;
-            font-size: 25px;
+            font-size: 30px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            padding: 0;
         }
 
         .parD{
@@ -48,7 +51,7 @@
         }
     
         .but:hover {
-            background-color: #fe966e;
+            background-color: #a75454;
             color: rgb(253, 252, 252);
             font-size: 40px;
             padding: 20px, 40px;
@@ -73,7 +76,7 @@
 }
 
     .content {
-    padding: 0 18px;
+    /*padding: 0 18px;*/
     display: none;
     overflow: hidden;
     background-color: #a75454;
@@ -83,37 +86,51 @@
     font-size: 20px;
 }
 
+.bor {
+    border: 2px solid white;
+    border-radius: 10px;   /* ✅ Rounds the line edges */
+    margin: 5px auto;
+    height: 0;             /* ✅ Ensure it stays as a line, not a box */
+}
+
+.image {
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+
 </style>
 </head>
 <body>
     <div class="background">
         <div class="title"><h1>Chapter 1: Today's Security Professional</h1></div>
-        <div class="parD"><p><mark style="background-color: #fe966e; color: white;">(Domains: 1.1, 1.2, 1.4, 3.3, 5.2)</mark></p></div>
-        <div class="border">
-            <div class="title2"><h2>Cybersecurity Objectives</h2></div>
+        <div class="parD"><p><mark style="background-color: #a75454; color: white;">(Domains: 1.1, 1.2, 1.4, 3.3, 5.2)</mark></p></div>
+    
+    <button type="button" class="collapsible"><h2>Cybersecurity Objectives</h2></button>
+        <div class="content">
             <div class="content-section" style="display: flex; gap: 20px; align-items: flex-start;">
-                <div class="par bull" style="flex: 1;">
+                <div  style="flex: 1;">
                     <p>Cybersecurity has 3 complementary objectives (CIA Triad):</p>
                     <ul>
                         <li><em>Confidentiality:</em> Ensures that unauthorized individuals are not able to gain access to sensitive information. Ex. Firewalls, access control lists, and encryptions.</li>
                         <li><em>Integrity:</em> Ensures that there are no unauthorized modifications to information or systems, either intentionally or unintentionally. Ex. Hashing and integrity monitoring.</li>
                         <li><em>Availability:</em> Ensures that information and systems are ready to meet the needs of legitimate users at the time those users request them. Ex. Fault tolerance, clustering, and backups.</li>
                     </ul>
-                    <p><em>Nonrepudiation:</em> Someone performing an action cannot deny it later after doing the action. Ex digital footprint. Nonrepudiation is not part of the CIA Triad but is still very important and is considered an objective.</p>
+                    <p><em>Nonrepudiation:</em> Someone performing an action cannot deny it later after doing the action. Ex digital footprint. Nonrepudiation is not t of the CIA Triad but is still very important and is considered an objective.</p>
                 </div>
                 <div class="image" style="flex: 0 0 auto;">
                     <img src="Sec+ Images/CIA Triad.png" style="width: 360px; height: auto;">
                 </div>
             </div>
-    </div>
-
-    <div class="border">
-        <div class="title2"><h2>Data Breach Risks</h2></div>
-        <div class="par bull"><p>Security incidents happen when an organization has a breach. This can be from malicious activity, accident, or from nature.</p></div>
-        <hr style="border: none; border-top: 10px dashed grey;">
-        <div class="title3"><h3>DAD Triad</h3></div>
-        <div class="content-section" style="display: flex; gap: 10px; align-items: flex-start;">
-            <div class="par bull" style="flex: 1;">
+        </div><button type="button" class="collapsible"><h2>Data Breach Risks</h2></button>
+        <div class="content">
+            <div><p>Security incidents happen when an organization has a breach. This can be from malicious activity, accident, or from nature.</p></div>
+            <hr class="bor">
+            <div class="title3"><h3>DAD Triad</h3></div>
+            <hr class="bor">
+            <div class="content-section" style="display: flex; gap: 10px; align-items: flex-start;">
+            <div  style="flex: 1;">
                 <p>DAD Triad explains the 3 key threats to cybersecurity efforts:</p>
                 <ul>
                     <li><em>Disclosure:</em> Is the exposure of data to unauthorized individuals (also known as data loss). This can lead to data exfiltration (the unauthorized transfer of data from a secure system to an external destination). Violates the Confidentiality principle.</li>
@@ -125,9 +142,10 @@
                 <img src="Sec+ Images/DAD Triad.jpg" style="width: 431px; height: auto;">
             </div>
         </div>
-        <hr style="border: none; border-top: 10px dashed grey;">
+        <hr class="bor">
         <div class="title3"><h3>Breach Impact</h3></div>
-        <div class="par bull">
+        <hr class="bor">
+        <div>
             <ul>
                 <li><em>Financial Risk:</em>Risk of monetary damage.</li>
                 <li><em>Reputation Risk:</em>Risk of negative publicity from customers, employees, suppliers, and other stakeholders.</li>
@@ -136,18 +154,17 @@
                 <li><em>Compliance Risk:</em>Risk of an organization runs into legal or regulatory requirements (legal issues, gets sued in court)</li>
             </ul>
         </div>
-
-    </div>
-
-    <div class="border">
-        <div class="title2"><h2>Implementing Security Controls</h2></div>
-        <div class="par"><p>Security controls are specific measures that fulfill the security objectives of an organization.</p></div>
-        <hr style="border: none; border-top: 10px dashed grey;">
-        <div class="title3"><h3>Gap Analysis</h3></div>
-        <div class="par"><p>Evaluates security controls. During Gap Analysis control objectives of an organization, system, or service are reviewed and then examine the controls designed to achieve those objectives. If there are any cases where the controls do not meet the control objective that is a gap. Gaps should be considered as potential risks and remediated as time and resources permit.</p></div>
-        <hr style="border: none; border-top: 10px dashed grey;">
+        </div><button type="button" class="collapsible"><h2>Implementing Security Controls</h2></button>
+        <div class="content">
+            <div ><p>Security controls are specific measures that fulfill the security objectives of an organization.</p></div>
+            <hr class="bor">
+            <div class="title3"><h3>Gap Analysis</h3></div>
+            <hr class="bor">
+        <div ><p>Evaluates security controls. During Gap Analysis control objectives of an organization, system, or service are reviewed and then examine the controls designed to achieve those objectives. If there are any cases where the controls do not meet the control objective that is a gap. Gaps should be considered as potential risks and remediated as time and resources permit.</p></div>
+        <hr class="bor">
         <div class="title3"><h3>Security Control Categories</h3></div>
-        <div class="par bull">
+        <hr class="bor">
+        <div>
             <ul>
                 <li><em>Technical controls:</em> Enforces Confidentiality, integrity and availability in the digital space. Ex. Firewall rules, access control lists, intrusion prevention systems, and encryption.</li>
                 <li><em>Operational controls:</em> Include the process that we put in place to manage technology in a secure manner. Includes user access reviews, log monitoring, and vulnerability management.</li>
@@ -155,9 +172,10 @@
                 <li><em>Physical Controls:</em> Impact from the outside world. Ex. Fences, locks, fire suppression systems, alarms, etc.</li>
             </ul>
         </div>
-        <hr style="border: none; border-top: 10px dashed grey;">
+        <hr class="bor">
         <div class="title3"><h3>Security Control Types</h3></div>
-        <div class="par bull">
+        <hr class="bor">
+        <div >
             <ul>
                 <li><em>Preventive controls:</em> Stop issues before they happen. Ex. Firewalls, encryption, etc.</li>
                 <li><em>Deterrent Controls:</em> Prevent attackers from breaching security policies. Ex. Fences, guard dogs, etc.</li>
@@ -167,67 +185,69 @@
                 <li><em>Directive controls:</em> Inform employees and others what to do to achieve security objectives.</li>
             </ul>
         </div>
-    </div>
-    <div class="border">
-        <div class="title2"><h2>Data Protection</h2></div>
-        <div class="par"><p>Three states when data might exist:</p></div>
-        <div class="par bull">
+        </div><button type="button" class="collapsible"><h2>Data Protection</h2></button>
+        <div class="content">
+            <div ><p>Three states when data might exist:</p></div>
+        <div >
             <ul>
                 <li><em>Data at rest:</em> Data that is stored on a device.</li>
                 <li><em>Data in transit:</em> Data that is being transmitted over a network.</li>
                 <li><em>Data in use:</em> Data that is being processed by a computer system.</li>
             </ul>
         </div>
-        <hr style="border: none; border-top: 10px dashed grey;">
+        <hr class="bor">
         <div class="title3"><h3>Data Encryption</h3></div>
-        <div class="par"><p>The use of math algorithms to protect information from prying eyes in rest and transit.</p></div>
-        <hr style="border: none; border-top: 10px dashed grey;">
+        <hr class="bor">
+        <div ><p>The use of math algorithms to protect information from prying eyes in rest and transit.</p></div>
+        <hr class="bor">
         <div class="title3"><h3>Data Loss Prevention (DLP)</h3></div>
-        <div class="par"><p>DLP Systems help organizations enforce information handling policies and procedures to prevent data loss and theft.</p></div>
-        <div class="par"><p>DLP has 2 different environments:</p></div>
-        <div class="par bull">
+        <hr class="bor">
+        <div ><p>DLP Systems help organizations enforce information handling policies and procedures to prevent data loss and theft.</p></div>
+        <div ><p>DLP has 2 different environments:</p></div>
+        <div >
             <ul>
                 <li><em>Agent-Based DLP:</em>uses software installed on systems that search those systems for the presence of sensitive information.</li>
                 <li><em>Agentless-Based DLP:</em>Systems are dedicated devices that sit on the network and monitor outbound network traffic, watching for any transmissions that contain unencrypted sensitive information.</li>
             </ul>
         </div>
-        <div class="par"><p>DLP systems have 2 mechanisms:</p></div>
-        <div class="par bull">
+        <div ><p>DLP systems have 2 mechanisms:</p></div>
+        <div >
             <ul>
                 <li><em>Pattern Matching:</em> Where they watch for the telltale signs of sensitive information.</li>
                 <li><em>Watermarking:</em> Where systems or administrators apply electronic tags to sensitive documents and then the DLP system can monitor the systems and network for unencrypted content containing those tags.</li>
             </ul>
         </div>
-        <hr style="border: none; border-top: 10px dashed grey;">
+        <hr class="bor">
         <div class="title3"><h3>Data Minimization</h3></div>
-        <div class="par"><p>Techniques seek to reduce risk by reducing the amount of sensitive information that we maintain on a regular basis. The best way to do it is to destroy data when it is no longer needed</p></div>
-        <div class="par"><p>If data can’t be destroyed the next best thing is to ,<em>deidentify</em> the data (deidentification process removes the ability to link data back to an individual, reducing its sensitivity).</p></div>
-        <div class="par"><p>An alternative to deidentification process is <em>obfuscation</em> (transforming data into a format where the original information can’t be retrieved).</p></div>
-        <div class="par bull">
+        <hr class="bor">
+        <div ><p>Techniques seek to reduce risk by reducing the amount of sensitive information that we maintain on a regular basis. The best way to do it is to destroy data when it is no longer needed</p></div>
+        <div ><p>If data can’t be destroyed the next best thing is to ,<em>deidentify</em> the data (deidentification process removes the ability to link data back to an individual, reducing its sensitivity).</p></div>
+        <div ><p>An alternative to deidentification process is <em>obfuscation</em> (transforming data into a format where the original information can’t be retrieved).</p></div>
+        <div >
             <ul>
                 <li><em>Hashing:</em> Uses hash functions to transform a value in our dataset to a corresponding hash value.</li>
                 <li><em>Tokenization:</em> Replaces sensitive data with a unique identifier using a lookup table.</li>
                 <li><em>Masking:</em> Uses hash functions to transform a value in our dataset to a corresponding hash value.</li>
             </ul>
         </div>
-        <div class="par"><p><em>Rainbow table attack:</em> is an attack where the attacker computes the hashes of those candidate values and then checks to see if those hashes exist in our data file. This only works if the attacker has a list of possible values for a field. </p></div>
-        <hr style="border: none; border-top: 10px dashed grey;">
-        <div class="title3"><h3>Access Restrictions</h3></div>
-        <div class="par"><p>Security measures that limit the ability of individuals or systems to access sensitive information or resources.</p></div>
-        <div class="par"><p>Two Types:</p></div>
-        <div class="par bull">
+        <div ><p><em>Rainbow table attack:</em> is an attack where the attacker computes the hashes of those candidate values and then checks to see if those hashes exist in our data file. This only works if the attacker has a list of possible values for a field. </p></div>
+        <hr class="bor">
+        <div class="title3 divider"><h3>Access Restrictions</h3></div>
+        <hr class="bor">
+        <div ><p>Security measures that limit the ability of individuals or systems to access sensitive information or resources.</p></div>
+        <div ><p>Two Types:</p></div>
+        <div >
             <ul>
                 <li><em>Geographical Restriction:</em> limits access based on physical location.</li>
                 <li><em>Permision Restriction:</em> limits access based on user’s role or level of authorization.</li>
             </ul>
         </div>
-        <hr style="border: none; border-top: 10px dashed grey;">
+        <hr class="bor">
         <div class="title3"><h3>Segmentation and Isolation</h3></div>
-        <div class="par"><p><em>Segmentation:</em> Puts sensitive systems on separate networks where they may communicate with each other but have strict restrictions on their ability to communicate with systems on the network.</p></div>
-        <div class="par"><p><em>Isolation:</em> Cuts a system off from access to or from outside networks.</p></div>
-    </div>
-
-
+        <hr class="bor">
+        <div ><p><em>Segmentation:</em> Puts sensitive systems on seate networks where they may communicate with each other but have strict restrictions on their ability to communicate with systems on the network.</p></div>
+        <div ><p><em>Isolation:</em> Cuts a system off from access to or from outside networks.</p></div>
+        </div>
     
 
 
@@ -257,7 +277,7 @@
         });
         }
     </script>
-        <div style="display: flex; justify-content: space-between;">
+        <div style="display: flex; justify-content: space-between;margin-top: 40px;">
         <button class="but" onclick="window.location.href='HomePage.html'">Home</button>
         <button class="but" onclick="window.location.href='chapter2.html'">Next Chapter</button>
         </div>
