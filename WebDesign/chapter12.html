@@ -4,130 +4,332 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HomePage</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
     <style>
         body {
             margin: 0;
-        }
-    
-        .background {
-            background-color: #1f6f8c;
-            color: black;
-            font-size: 50px;
-            padding: 50px;
-            min-height: 100vh;
-        }
-    
-        .title{
-            color: white;
-            text-align: center;
-            font-size: 40px;
-        }
-    
-        .title3{
-            color: white;
-            text-align: center;
-            font-size: 25px;
-        }
+            font-family: Arial, Helvetica, sans-serif;
+    }
 
-        .parD{
+    .background {
+        background-color: #1f6f8c;
+        color: black;
+        font-size: 50px;
+        padding: 50px;
+        min-height: 100vh;
+    }
+
+    .title {
+        color: white;
+        text-align: center;
+        font-size: 40px;
+    }
+
+    .title3 h3 {
+        color: white;
+        text-align: center;
+        font-size: 30px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding: 0;
+    }
+
+    .parD {
         color: white;
         text-align: center;
         font-size: 20px;
     }
 
-        
-        .but{
-            background-color: rgb(15, 147, 218);
-            color: rgb(249, 249, 252);
-            font-size:30px;
-            padding:20px, 40px;
-            border: 1.5px black solid;
-            transition-duration: 0.4s;
-            
-            display: block; ; 
-        }
-    
-        .but:hover {
-            background-color: #fe966e;
-            color: rgb(253, 252, 252);
-            font-size: 40px;
-            padding: 20px, 40px;
-        }
+    .but {
+        background-color: rgb(15, 147, 218);
+        color: rgb(249, 249, 252);
+        font-size: 30px;
+        padding: 20px 40px;
+        border: 1.5px black solid;
+        transition-duration: 0.4s;
+        border-radius: 15px;
+        display: block;
+    }
 
-        .collapsible {
-    background-color: rgb(15, 147, 218);
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    outline: none;
-    margin: 0;
-    display: block;
-    color: white;
-    text-align: center;
-    font-size: 30px;
+    .but:hover {
+        background-color: #a75454;
+        color: rgb(253, 252, 252);
+        font-size: 40px;
+    }
+
+    .bi-arrow-right-circle {
+        color: white;
+        cursor: pointer;
 }
+
+    .bi-arrow-right-circle:hover {
+    color: #a75454;
+}
+    .bi-arrow-left-circle {
+        color: white;
+        cursor: pointer;
+}
+    .bi-arrow-left-circle:hover {
+        color: #a75454;
+    }
+
+
+    .collapsible {
+        background-color: rgb(15, 147, 218);
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: rgb(7, 63, 94) solid 2px;
+        outline: none;
+        margin: 0;
+        display: block;
+        color: white;
+        text-align: center;
+        font-size: 30px;
+        border-radius: 15px;
+        box-shadow: #000000 5px 5px 5px;
+    }
 
     .active, .collapsible:hover {
-    background-color: rgb(7, 63, 94);
+        background-color: rgb(7, 63, 94);
+        box-shadow: 5px 5px 5px #000000;
+    }
+
+    .collapsible:after {
+    content: "\F078"; /* Correct use of the code point */
+    font-family: "Font Awesome 5 Free"; /* Or your correct FA version */
+    font-weight: 900; /* Most Font Awesome solid icons require this */
+    font-size: 20px;
+    color: white;
+    float: right;
+    margin-left: 5px;
+    position: relative;
+    top: -5px;
 }
 
-    .content {
-    padding: 0 18px;
-    display: none;
-    overflow: hidden;
-    background-color: #a75454;
-    margin: 0;
-    color: white;
-    text-align: left;
+.active:after {
+    content: "\F077"; /* Another Font Awesome icon */
+    font-family: "Font Awesome 5 Free"; /* Or your correct FA version */
+    font-weight: 900; /* Most Font Awesome solid icons require this */
     font-size: 20px;
+    color: white;
+    float: right;
+    margin-left: 5px;
+    position: relative;
+    top: -5px;
 }
+
+
+    .content {
+        padding: 0 18px;
+        padding-top: 18px;
+        padding-bottom: 18px;
+        display: none;
+        overflow: hidden;
+        background-color: #a75454;
+        margin: 0;
+        color: white;
+        text-align: left;
+        font-size: 20px;
+        border-radius: 15px;
+        box-shadow: #000000 5px 5px 5px;
+    }
+
+    .bor {
+        border: 2px solid white;
+        border-radius: 10px;
+        margin: 5px auto;
+        height: 0;
+    }
+
+    .image {
+        display: block;
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    *:not(html):not(body):not(.background) {
+    border-radius: 15px;
     
-        </style>
+}
+
+    .topnav {
+        overflow: hidden;
+        background-color: #e9e9e9;
+    
+    }
+
+    .topnav a {
+        float: left;
+        display: block;
+        color: #a75454;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        margin: 4px 4px; /* Add space around links */
+        border-radius: 4px; /* Rounded corners on highlight */
+    }
+
+    .topnav a:hover {
+        background-color: #a75454;
+        color: white;
+        
+    }
+
+    .topnav a.active {
+        background-color: #2196F3;
+        color: white;
+    }
+
+    .topnav .search-container {
+        float: right;
+    }
+
+    /* ✅ FIX: align search input and button */
+    .topnav .search-container form {
+        display: flex;
+        align-items: center;
+    }
+
+    .topnav input[type=text] {
+        padding: 6px;
+        margin-top: 8px;
+        font-size: 17px;
+        border: none;
+        margin-right: 8px;
+        width:auto;
+    }
+
+    .topnav .search-container button {
+        padding: 6px 10px;
+        margin-top: 8px;
+        margin-right: 16px;
+        background: #ddd;
+        font-size: 17px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .topnav .search-container button:hover {
+        background: #a75454;
+        color: white;
+    }
+
+    @media screen and (max-width: 600px) {
+    .topnav .search-container {
+        float: none;
+    }
+
+    .topnav a,
+    .topnav input[type=text],
+    .topnav .search-container button {
+        float: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+    }
+
+    .topnav input[type=text] {
+        border: 1px solid #ccc;
+    }
+
+    .topnav .search-container form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    }
+
+
+</style>
 </head>
 <body>
     <div class="background">
-        <div class="title"><h1>Chapter 12:</h1></div>
-        <div class="title2"><h1>Topic 1</h1></div>
-        <div class="par"><p>cybercybercyberbinmkuiyvucvybijihuiyvutyuhiuiyvhiivybjukuhuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuubihkkkkkkkkkkkkkkkkk</p></div>
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        <script>
-            var coll = document.getElementsByClassName("collapsible");
-            var i;
-            
-            for (i = 0; i < coll.length; i++) {
-                coll[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var content = this.nextElementSibling;
-                if (content.style.display === "block") {
-                    content.style.display = "none";
-                } else {
-                    content.style.display = "block";
-                }
-            });
-            }
-        </script>
-        <div style="display: flex; justify-content: space-between;">
-            <button class="but" onclick="window.location.href='HomePage.html'">Home</button>
-            <button class="but" onclick="window.location.href='chapter13.html'">Next Chapter</button>
+        <div class="topnav">
+            <a href="HomePage.html">Home</a>
+            <a href="chapter1.html">Chapter 1</a>
+            <a href="chapter2.html">Chapter 2</a>
+            <a href="chapter3.html">Chapter 3</a>
+            <a href="chapter4.html">Chapter 4</a>
+            <a href="chapter5.html">Chapter 5</a>
+            <a href="chapter6.html">Chapter 6</a>
+            <a href="chapter7.html">Chapter 7</a>
+            <a href="chapter8.html">Chapter 8</a>
+            <a href="chapter9.html">Chapter 9</a>
+            <a href="chapter10.html">Chapter 10</a>
+            <a href="chapter11.html">Chapter 11</a>
+            <a href="chapter12.html">Chapter 12</a>
+            <a href="chapter13.html">Chapter 13</a>
+            <a href="chapter14.html">Chapter 14</a>
+            <a href="chapter15.html">Chapter 15</a>
+            <a href="chapter16.html">Chapter 16</a>
+            <a href="chapter17.html">Chapter 17</a>
+            <a href="quiz.html">Quiz</a>
+            <div class="search-container">
+            <form action="/action_page.php">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+            </div>
         </div>
+        <div class="title"><h1>Chapter 12: </h1></div>
+        <div class="parD"><p><mark style="background-color: #a75454; color: white;">(Domains: )</mark></p></div>
+    
+    <button type="button" class="collapsible"><h2></h2></button>
+        <div class="content">
+        </div>
+        <button type="button" class="collapsible"><h2></h2></button>
+        <div class="content">
+        </div>
+        <button type="button" class="collapsible"><h2></h2></button>
+        <div class="content">
+        </div>
+        <button type="button" class="collapsible"><h2></h2></button>
+        <div class="content">
+        </div>
+    
 
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+        }
+    </script>
+        <div style="display: flex; justify-content: space-between;margin-top: 40px;">
+        <i class="bi bi-arrow-left-circle" onclick="window.location.href='chapter11.html'"></i>
+        <i class="bi bi-arrow-right-circle" onclick="window.location.href='chapter13.html'"></i>
+
+        </div>
     </div>
 </body>
 </html>
