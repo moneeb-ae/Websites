@@ -286,7 +286,200 @@
     
     <button type="button" class="collapsible"><h2>Malware</h2></button>
         <div class="content">
+            <p>Wide range of software that is intentionally designed to cause harm to a system, device, network, or user.</p>
+            <hr class="bor">
+            <div class="title3"><h3>Ransomware</h3></div>
+            <hr class="bor">
+            <div>
+                <p>Malware that takes over a computer and demands a ransom. It can be for crypto and or to expose someone’s private information.</p>
+                <p>Usually used in phishing campaigns or by direct methods (Remote Desktop Protocol, vulnerable services, or front-facing applications that they can compromise).</p>
+                <b>Indicators of Compromise (IoCs):</b>
+                <ul>
+                    <li>Command and Control (C&C) traffic and/or contact to known malicious IP addresses.</li>
+                    <li>Use of legitimate tools in abnormal way.</li>
+                    <li>Lateral movement processes that seek to attack or gain information.</li>
+                    <li>Encryption files.</li>
+                    <li>Notices to end users of the encryption process with demands for ransom.</li>
+                    <li>Data exfiltration behaviors, including large file transfers</li>
+                </ul>
+                <b>Defense:</b>
+                <ul>
+                    <li>Effective backup system that stores files in a separate location from the infected system.</li>
+                    <li>Having antivirus or antimalware programs downloaded.</li>
+                </ul>
+                <p>Paying the ransom is not always the answer.</p>
+            </div>
+            <hr class="bor">
+            <div class="title3"><h3>Trojans</h3></div>
+            <hr class="bor">
+            <div>
+                <p>Type of malware that is disguised as legitimate software.</p>
+                <p>An example is Triada Trojan, which is often distributed in the guise of a modified, feature-enhanced Whatsapp version.</p>
+                <p> When the application is launched the Trojan gathers information about the host devices (device IDs, subscriber IDs, and device’s hardware address). The information is sent to a device on a remote server. Then the malicious actor can do what they want with the downloaded information.</p>
+                <b>IoCs of Trojans:</b>
+                <ul>
+                    <li>Signatures for specific malware applications or downloadable files.</li>
+                    <li>C&C system hostnames and IP addresses.</li>
+                    <li>Folders or files created on target devices.</li>
+                </ul>
+                <p>Remote Access Trojan (RAT) provides attackers with access to remote attacks. Organizations have an issue, because remote access tools also use RAT. Malware detection programs will call a false positive. To combat RAT don’t download untrusted software and antimalware or Endpoint Detection and Response (EDR) tools that detect Trojan and RAT behaviors.</p>
+                <b>Mitigating Practices:</b>
+                <ul>
+                    <li>Awareness of downloaded and running applications.</li>
+                    <li>Controlling the applications users can download.</li>
+                    <li>Downloading Anti-malware and EDR.</li>
+                </ul>
+                <p><b>Bot:</b> Automated program.</p>
+                <p><b>Botnet:</b> A network compromised computer by bots.</p>
+                <p><b>Command & Control (C&C):</b> The central server that communicates with all the bots in a botnet.</p>
+            </div>
+            <hr class="bor">
+            <div class="title3"><h3>Worms</h3></div>
+            <hr class="bor">
+            <div>
+                <p>Attacks on vulnerable services that spread themselves. Worms can be attached to email attachments, network file shares, IoT (internet to things), phones, etc. Worms are self-install.</p>
+                <b>To defend from worms:</b>
+                <ul>
+                    <li>Firewalls</li>
+                    <li>Networks-Level Controls</li>
+                </ul>
+                <p>Example of a worm is Raspberry Robin, which is used as part of pre-ransomware activity. It spreads from an infected USB using LNK files. Once running it uses built-in Windows tools to accomplish tasks and stay living.</p>
+                <b>IoCs of Worms:</b>
+                <ul>
+                    <li>Know malicious files.</li>
+                    <li>Downloads of additional components from remote server.</li>
+                    <li>C&C contact to remote system.</li>
+                    <li>Malicious behaviors using system commands for injections and other activities, including use of cmd.exe.msiexec,exe, and others.</li>
+                    <li>Hands-on-keyboard attacker activity.</li>
+                </ul>
+                <b>Mitigating Worms:</b>
+                <ul>
+                    <li>Effective network-level controls focused on preventing infection traffic.</li>
+                    <li>Firewalls, IPS devices, network segmentation, and similar controls are the first layer of defense.</li>
+                    <li>Patching and configuring services to limit attack surfaces.</li>
+                </ul>
+                <b>After the infection:</b>
+                <ul>
+                    <li>Use of antimalware, EDR, and similar tools to stop and potentially remove infections.</li>
+                    <li>Reinstallation or resetting to original firmware on the device.</li>
+                    <li>Removal may be impossible.</li>
+                </ul>
+            </div>
+            <hr class="bor">
+            <div class="title3"><h3>Spyware</h3></div>
+            <hr class="bor">
+            <div>
+                <p>Designed to obtain information about a person, organization, or system. Spyware can track browsing habits, installations, or similar information. Spyware goal is to target sensitive data, access webcam, or have unlimited access to a device.</p>
+                <b>Combat Spyware:</b>
+                <ul>
+                    <li>Antimalware tools with antispyware capabilities.</li>
+                    <li>User awareness includes control of software that is being downloaded on a device.</li>
+                </ul>
+                <b>IoCs of Spyware:</b>
+                <ul>
+                    <li>Remote-access and remote-control-related indicators.</li>
+                    <li>Know software file fingerprint.</li>
+                    <li>Malicious processes, often disguised as system processes.</li>
+                    <li>Injection attacks against browsers.</li>
+                </ul>
+                <p>Spyware can use Trojan, worm, or virus-style attacks to access a device.</p>
+            </div>
+            <hr class="bor">
+            <div class="title3"><h3>Bloatware</h3></div>
+            <hr class="bor">
+            <div>
+                <p>Unwanted applications installed on system by manufacturers. It is unintentional but caused by poorly written code with information about the system or usage or may even provide a way for attackers to access a device.</p>
+                <p>Mitigation is by uninstalling the unwanted pre-installed applications.</p>
+            </div>
+            <hr class="bor">
+            <div class="title3"><h3>Viruses</h3></div>
+            <hr class="bor">
+            <div>
+                <p>
+                    Malicious programs that self-copy and self-replicate once they are activated. Viruses look to spread to multiple devices. The virus needs a <b>trigger</b> to start so it can infect the computer which is known as the <b>payload</b>.
+                </p>
+                <b>Virus Types:</b>
+                <ul>
+                    <li>Memory-resident virus which remains in the memory.</li>
+                    <li>Non-memory-resident viruses which execute, spread, and then shut down.</li>
+                    <li>Boot Sector viruses which reside in the boot sector of a drive or media storage.</li>
+                    <li>Email viruses which spread via email as an attachment or as part of the email itself.</li>
+                </ul>
+                <p>Fileless viruses’ attacks are like regular viruses. They spread via email or websites and exploit flaws in browsers, plug-ins, and websites. Once they find a way into the system, they inject themselves into the memory.</p>
+                <b>Mitigation:</b>
+                <ul>
+                    <li>User awareness of what they are clicking on or downloading.</li>
+                    <li>Downloading antimalware.</li>
+                    <li>Having virus removal tools.</li>
+                    <li>Wipe hard drive or discard hard drive.</li>
+                </ul>
+            </div>
+            <hr class="bor">
+            <div class="title3"><h3>Keyloggers</h3></div>
+            <hr class="bor">
+            <div>
+                <p>Captures keystrokes from keyboard. It may also collect mouse movement, touch screen inputs, and credit card swipes. </p>
+                <p>Works in different ways, ranging from tools that capture data from the kernel, via APIs or scripts, or even directly from memory. Goal is to capture user input.</p>
+                <b>Preventions:</b>
+                <ul>
+                    <li>Malware with keylogger detection.</li>
+                    <li>Multifactor authentication.</li>
+                </ul>
+                <b>IoCs of Keylogger:</b>
+                <ul>
+                    <li>File hashes and signatures.</li>
+                    <li>Exfiltration activity to C&C systems.</li>
+                    <li>Process names.</li>
+                    <li>Known reference URLs.</li>
+                </ul>
+            </div>
+            <hr class="bor">
+            <div class="title3"><h3>Logic Bombs</h3></div>
+            <hr class="bor">
+            <div>
+                <p>Functions or code placed inside other programs that will be activated when set conditions are met.</p>
+                <p>Logic bombs are a consideration in software development and systems management and have a significant impact if they successfully activate.</p>
+                <p>IoCs is to analyze the code and logic and from there build a defense. </p>
+            </div>
+            <hr class="bor">
+            <div class="title3"><h3>Logic Bombs</h3></div>
+            <hr class="bor">
+            <div>
+                <ul>
+                    <li>Online analysis tools can check if the malware is a known tool and see if it identified by multiple AV tools.</li>
+                    <li>Sandbox tools can analyze malware behavior in a protected environment.</li>
+                    <li>Manual code analysis.</li>
+                </ul>
+            </div>
+            <hr class="bor">
+            <div class="title3"><h3>Rootkits</h3></div>
+            <hr class="bor">
+            <div>
+                <p>Designed to allow attackers to access a system through a backdoor.</p>
+                <p>Rootkits also conceal the rootkit from detection from multiple techniques ranging from hooking file-system drivers to ensure that users cannot see the rootkit files to infecting startup code in the Master Boot Record (MBR) of a disk, allowing attacks against full-disk encryption systems.</p>
+                <b>To detect a rootkit, you can:</b>
+                <ul>
+                    <li>Test the suspected system from a trusted device.</li>
+                    <li>Rootkit detection tools.</li>
+                    <li>Integrity checking with data validation.</li>
+                </ul>
+                <p>It is also recommended to rebuild the system or to restore it from a well-known backup.</p>
+                <b>Prevention:</b>
+                <ul>
+                    <li>Patching.</li>
+                    <li>Use of a secure configuration.</li>
+                    <li>Ensuring that privilege management is used.</li>
+                </ul>
+                <b>IoCs:</b>
+                <ul>
+                    <li>File hashes and signatures.</li>
+                    <li>C&C domains, IP addresses, and systems.</li>
+                    <li>Behavior-based identification like the creation of services, executables, configuration changes, file access, and command innovation.</li>
+                    <li>Opening ports or creation of reverse proxy tunnels.</li>
+                </ul>
+            </div>
         </div>
+    
     
 
 
@@ -300,27 +493,26 @@
 
 
 
-    <script>
-        var coll = document.getElementsByClassName("collapsible");
-        var i;
+        <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
         
-        for (i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var content = this.nextElementSibling;
-            if (content.style.display === "block") {
-                content.style.display = "none";
-            } else {
-                content.style.display = "block";
+            for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+            }   else {
+                    content.style.display = "block";
             }
         });
         }
-    </script>
-        <div style="display: flex; justify-content: space-between;margin-top: 40px;">
-        <i class="bi bi-arrow-left-circle" onclick="window.location.href='chapter2.html'"></i>
-        <i class="bi bi-arrow-right-circle" onclick="window.location.href='chapter4.html'"></i>
-
-        </div>
+        </script>
+            <div style="display: flex; justify-content: space-between;margin-top: 40px;">
+                <i class="bi bi-arrow-left-circle" onclick="window.location.href='chapter2.html'"></i>
+                <i class="bi bi-arrow-right-circle" onclick="window.location.href='chapter4.html'"></i>
+            </div>
     </div>
 </body>
 </html>
