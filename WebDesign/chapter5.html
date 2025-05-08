@@ -286,6 +286,95 @@
     
     <button type="button" class="collapsible"><h2>Vulnerability Management</h2></button>
         <div class="content">
+            <p>Use Vulnerability scanning to detect new vulnerabilities as they arise, then assess the priority level.</p>
+            <hr class="bor">
+            <div class="title3"><h3>Identifying Scan Targets</h3></div>
+            <hr class="bor">
+            <p>Identify the systems that will be covered by the vulnerability scanned, you must ask these questions:</p>
+            <ul>
+                <li>What is the data classification of the information stored, processes, or transmitted by the system?</li>
+                <li>Is the system exposed to the internet or other public or semipublic networks?</li>
+                <li>What services are offered by the system?</li>
+                <li>Is the system a production, test, or development system?</li>
+            </ul>
+            <p><b>Asset inventory:</b> is a list of all the hardware, software, and data that an organization owns or uses.</p>
+            <p><b>Asset criticality </b> refers to the level of importance a particular asset holds to an organization's operations.</p>
+            <hr class="bor">
+            <div class="title3"><h3>Determining Scan Frequency</h3></div>
+            <hr class="bor">
+            <p>Vulnerability scanning tools are usually automated and companies set how many times the tool scans for vulnerability. Automated alerts should also be configured.</p>
+            <p>Different factors to influence the frequency of vulnerability scans:</p>
+            <ul>
+                <li><b>Risk Appetite:</b> The willingness to tolerate risks.</li>
+                <li><b>Regulatory Requirements:</b> Rules and guidelines that businesses must follow to comply with laws and regulations.</li>
+                <li><b>Technical Constraints</b> may limit the frequency.</li>
+                <li><b>Business Constraints:</b> Can limit the frequency if it is a high season or a low season.</li>
+                <li><b>Licensing Limitations</b></li>
+            </ul>
+            <hr class="bor">
+            <div class="title3"><h3>Configuring Vulnerability Scans</h3></div>
+            <hr class="bor">
+            <p>The parameters of the scan like scheduling and types of reports. Administrators may target a certain area or types of tests. Making sure everything is up to date.</p>
+            <p><b>Scan Sensitivity Levels</b>Configuring the settings determines the type of test intended to be done. Administrators need to choose which plug-ins to use as it can save time and may affect testing. Best way around this problem is to use test environments.</p>
+            <p><b>Supplementing Network Scans:</b> Doing scans via the network gives the test a more realistic vantage point.</p>
+            <p><b>Credentialed Scans:</b> Only retrieve information from target servers and has privilege access.</p>
+            <p>Server-Based Scanning uses <b>Agent-Based Scanning</b> which sends agents into every server and conducts scans from inside out.</p>
+            <p><b>Scan Perspective</b>Conducts the scan from different locations on the network, providing a different view into vulnerabilities.</p>
+            <p>Internal scans might run from a scanner on the general network providing the view that a malicious insider might encounter.</p>
+            <p>Scanners in the datacenter are the most accurate and most important.</p>
+            <p>Controls that might affect a scan results:</p>
+            <ul>
+                <li>Firewall Settingd</li>
+                <li>Network Segmentation</li>
+                <li>Intrusion Detection Systems (IDS)</li>
+                <li>Intrusion Prevention Systems (IPS)</li>
+            </ul>
+            <hr class="bor">
+            <div class="title3"><h3>Scanner Maintenance</h3></div>
+            <hr class="bor">
+            <p>Make sure Scanners are up to date.</p>
+            <p><b>Scanner Software:</b> Patching scanners protect organizations from scanner vulnerabilities.</p>
+            <p><b>Vulnerability Plug-in Feeds:</b> Update Plug-ins regularly.</p>
+            <p>Security Content Automation Protocol (SCAP) Standards:</p>
+            <ul>
+                <li><b>Common Configuration Enumeration (CCE):</b> Discussing system configuration issues.</li>
+                <li><b>Common Platform Enumeration (CPE):</b> Describing product names and versions.</li>
+                <li><b>Common Vulnerabilities and Exposure (CVE):</b> Describing security-related software flaws.</li>
+                <li><b>Common Vulnerability Scoring Systems (CVSS):</b> Measuring and describing the severity of the security-related software flaws.</li>
+                <li><b>Extensible Configuration Checklist Description Format (XCCDF):</b> A language for specifying checklists and reporting checklist results.</li>
+                <li><b>Open Vulnerability and Assessment Language (OVAL):</b> A language for specifying low-level testing procedures used by checklists.</li>
+            </ul>
+            <hr class="bor">
+            <div class="title3"><h3>Vulnerability Scanning Tools</h3></div>
+            <hr class="bor">
+            <p>Organizations need a network vulnerability scanner, application scanner, and a web application scanner.</p>
+            <p><b>Infrastructure Vulnerability Scanning:</b> Network scanners can probe a wide range of network-connected devices and find their vulnerabilities.</p>
+            <p><b>Application Testing:</b> These tools are usually used during the software development process.</p>
+            <p>Three common techniques:</p>
+            <ul>
+                <li><b>Static Analysis:</b> Analyzes the code without execution.</li>
+                <li><b>Dynamic Analysis:</b> Execute the code as part of the test.</li>
+                <li><b>Interactive Analysis:</b> Combines both static and dynamic analysis.</li>
+            </ul>
+            <p><b>Web Application Scanning:</b> Scans web applications. Looks for SQL injection, cross-site scripting (XSS), and cross-site request forgery (CSRF) vulnerabilities.</p>
+            <hr class="bor">
+            <div class="title3"><h3>Reviewing and Interpreting Scan Reports</h3></div>
+            <hr class="bor">
+            <p>These reports provide detailed information about each vulnerability that appears.</p>
+            <p>Report Page Structure/Sections:</p>
+            <ul>
+                <li>Top of the page vulnerability type.</li>
+                <li><b>“Description”</b> of the vulnerability.</li>
+                <li><b>“Solution”</b> for vulnerability.</li>
+                <li><b>“See Also”</b> references to read.</li>
+                <li><b>“Output”</b> returns information returned by the remote system when probed for the vulnerability.</li>
+                <li><b>“Port/Host”</b> provides details on the servers that contain a vulnerability.</li>
+                <li><b>“Vulnerability Information”</b> is the type of vulnerability known to the community.</li>
+                <li><b>"Risk Information”</b> assessing the severity of the vulnerability.</li>
+                <li><b>“Plugin Details”</b> provides information on the plug-in that found the vulnerability.</li>
+            </ul>
+            <p><b>Understanding Common Vulnerability Scoring System (CVSS):</b> A component of SCAP that asses the severity of the vulnerability.</p>
+            /*ADD IMAGE*\
         </div>
         <button type="button" class="collapsible"><h2>Vulnerability Classification</h2></button>
         <div class="content">
