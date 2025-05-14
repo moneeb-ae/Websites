@@ -1,32 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-    .background {
-        background-color: #1f6f8c;
-        color: black;
-    }
-    .paragraph {
-        color: black;
-    }
-    .title{
-        color: white;
-        text-align: center;
-    }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Collapsible Calculator Sidebar</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div class="background">
-    <div class="title"><h1>Tester header</h1></div>
-    <div class="paragraph"><p>•	Technical controls: Enforces Confidentiality, integrity and availability in the digital space. Ex. Firewall rules, access control lists, intrusion prevention systems, and encryption.
-        •	Operational controls: Include the process that we put in place to manage technology in a secure manner. Includes user access reviews, log monitoring, and vulnerability management.
-        •	Managerial Controls: Are procedural mechanisms that focus on the mechanics of the risk management process. Ex. Periodic risk assessments, security planning exercises, and incorporation of security into organization’s change management, service acquisition, and project management practice.
-        •	Physical Controls: Impact from the outside world. Ex. Fences, locks, fire suppression systems, alarms, etc.
-        </p></div>
-    <p>meow</p>
+
+<!-- Sidebar -->
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <div id="calculator">
+    <input id="display" readonly />
+    <div id="keys">
+        <button onclick="appendToDisplay('7')">7</button>
+        <button onclick="appendToDisplay('8')">8</button>
+        <button onclick="appendToDisplay('9')">9</button>
+        <button class="operator-btn" onclick="appendToDisplay('/')">/</button>
+        
+        <button onclick="appendToDisplay('4')">4</button>
+        <button onclick="appendToDisplay('5')">5</button>
+        <button onclick="appendToDisplay('6')">6</button>
+        <button class="operator-btn" onclick="appendToDisplay('*')">*</button>
+        
+        <button onclick="appendToDisplay('1')">1</button>
+        <button onclick="appendToDisplay('2')">2</button>
+        <button onclick="appendToDisplay('3')">3</button>
+        <button class="operator-btn" onclick="appendToDisplay('-')">-</button>
+        
+        <button onclick="appendToDisplay('0')">0</button>
+        <button onclick="clearDisplay()">C</button>
+        <button onclick="calculate()">=</button>
+        <button class="operator-btn" onclick="appendToDisplay('+')">+</button>
     </div>
+</div>
+</div>
+
+<!-- Page content -->
+<div id="main">
+    <button class="openbtn" onclick="openNav()">☰ Open Calculator</button>
+    <h1>Main Page Content</h1>
+    <p>This is your main content area. The calculator opens from the left.</p>
+</div>
+
+<script src="index.js"></script>
 </body>
 </html>
