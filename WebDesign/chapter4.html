@@ -1,355 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HomePage</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .background {
-        background-color: #1f6f8c;
-        color: black;
-        font-size: 50px;
-        padding: 50px;
-        min-height: 100vh;
-    }
-
-    .title {
-        color: white;
-        text-align: center;
-        font-size: 40px;
-    }
-
-    .title3 h3 {
-        color: white;
-        text-align: center;
-        font-size: 30px;
-        margin-top: 5px;
-        margin-bottom: 5px;
-        padding: 0;
-    }
-
-    .parD {
-        color: white;
-        text-align: center;
-        font-size: 20px;
-    }
-
-    .but {
-        background-color: rgb(15, 147, 218);
-        color: rgb(249, 249, 252);
-        font-size: 30px;
-        padding: 20px 40px;
-        border: 1.5px black solid;
-        transition-duration: 0.4s;
-        border-radius: 15px;
-        display: block;
-    }
-
-    .but:hover {
-        background-color: #a75454;
-        color: rgb(253, 252, 252);
-        font-size: 40px;
-    }
-
-    .bi-arrow-right-circle {
-        color: white;
-        cursor: pointer;
-}
-
-    .bi-arrow-right-circle:hover {
-    color: #a75454;
-}
-    .bi-arrow-left-circle {
-        color: white;
-        cursor: pointer;
-}
-    .bi-arrow-left-circle:hover {
-        color: #a75454;
-    }
-
-
-    .collapsible {
-        background-color: rgb(15, 147, 218);
-        cursor: pointer;
-        padding: 18px;
-        width: 100%;
-        border: rgb(7, 63, 94) solid 2px;
-        outline: none;
-        margin: 0;
-        display: block;
-        color: white;
-        text-align: center;
-        font-size: 30px;
-        border-radius: 15px;
-        box-shadow: #000000 5px 5px 5px;
-    }
-
-    .active, .collapsible:hover {
-        background-color: rgb(7, 63, 94);
-        box-shadow: 5px 5px 5px #000000;
-    }
-
-    .collapsible:after {
-    content: "\F078"; /* Correct use of the code point */
-    font-family: "Font Awesome 5 Free"; /* Or your correct FA version */
-    font-weight: 900; /* Most Font Awesome solid icons require this */
-    font-size: 20px;
-    color: white;
-    float: right;
-    margin-left: 5px;
-    position: relative;
-    top: -5px;
-}
-
-.active:after {
-    content: "\F077"; /* Another Font Awesome icon */
-    font-family: "Font Awesome 5 Free"; /* Or your correct FA version */
-    font-weight: 900; /* Most Font Awesome solid icons require this */
-    font-size: 20px;
-    color: white;
-    float: right;
-    margin-left: 5px;
-    position: relative;
-    top: -5px;
-}
-
-
-    .content {
-        padding: 0 18px;
-        padding-top: 18px;
-        padding-bottom: 18px;
-        display: none;
-        overflow: hidden;
-        background-color: #a75454;
-        margin: 0;
-        color: white;
-        text-align: left;
-        font-size: 20px;
-        border-radius: 15px;
-        box-shadow: #000000 5px 5px 5px;
-    }
-
-    .bor {
-        border: 2px solid white;
-        border-radius: 10px;
-        margin: 5px auto;
-        height: 0;
-    }
-
-    .image {
-        display: block;
-        margin-left: auto;
-        margin-right: 0;
-    }
-
-    * {
-        box-sizing: border-box;
-    }
-
-    *:not(html):not(body):not(.background) {
-    border-radius: 15px;
-    
-}
-
-    .topnav {
-        overflow: hidden;
-        background-color: #e9e9e9;
-    
-    }
-
-    .topnav a {
-        float: left;
-        display: block;
-        color: #a75454;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 17px;
-        margin: 4px 4px; /* Add space around links */
-        border-radius: 4px; /* Rounded corners on highlight */
-    }
-
-    .topnav a:hover {
-        background-color: #a75454;
-        color: white;
-        
-    }
-
-    .topnav a.active {
-        background-color: #2196F3;
-        color: white;
-    }
-
-    .topnav .search-container {
-        float: right;
-    }
-
-    /* ✅ FIX: align search input and button */
-    .topnav .search-container form {
-        display: flex;
-        align-items: center;
-    }
-
-    .topnav input[type=text] {
-        padding: 6px;
-        margin-top: 8px;
-        font-size: 17px;
-        border: none;
-        margin-right: 8px;
-        width:auto;
-    }
-
-    .topnav .search-container button {
-        padding: 6px 10px;
-        margin-top: 8px;
-        margin-right: 16px;
-        background: #ddd;
-        font-size: 17px;
-        border: none;
-        cursor: pointer;
-    }
-
-    .topnav .search-container button:hover {
-        background: #a75454;
-        color: white;
-    }
-
-    @media screen and (max-width: 600px) {
-    .topnav .search-container {
-        float: none;
-    }
-
-    .topnav a,
-    .topnav input[type=text],
-    .topnav .search-container button {
-        float: none;
-        display: block;
-        text-align: left;
-        width: 100%;
-        margin: 0;
-        padding: 14px;
-    }
-
-    .topnav input[type=text] {
-        border: 1px solid #ccc;
-    }
-
-    .topnav .search-container form {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    }
-
-
-</style>
-</head>
-<body>
-    <div class="background">
-        
-        <div class="topnav">
-            <a href="HomePage.html">Home</a>
-            <a href="chapter1.html">Chapter 1</a>
-            <a href="chapter2.html">Chapter 2</a>
-            <a href="chapter3.html">Chapter 3</a>
-            <a href="chapter4.html">Chapter 4</a>
-            <a href="chapter5.html">Chapter 5</a>
-            <a href="chapter6.html">Chapter 6</a>
-            <a href="chapter7.html">Chapter 7</a>
-            <a href="chapter8.html">Chapter 8</a>
-            <a href="chapter9.html">Chapter 9</a>
-            <a href="chapter10.html">Chapter 10</a>
-            <a href="chapter11.html">Chapter 11</a>
-            <a href="chapter12.html">Chapter 12</a>
-            <a href="chapter13.html">Chapter 13</a>
-            <a href="chapter14.html">Chapter 14</a>
-            <a href="chapter15.html">Chapter 15</a>
-            <a href="chapter16.html">Chapter 16</a>
-            <a href="chapter17.html">Chapter 17</a>
-            <a href="quiz.html">Quiz</a>
-            <div class="search-container">
-            <form action="/action_page.php">
-                <input type="text" placeholder="Search.." name="search">
-                <button type="submit"><i class="fa fa-search"></i></button>
-            </form>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HomePage</title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="background">
+            
+            <div class="topnav">
+                <a href="HomePage.html">Home</a>
+                <a href="chapter1.html">Chapter 1</a>
+                <a href="chapter2.html">Chapter 2</a>
+                <a href="chapter3.html">Chapter 3</a>
+                <a href="chapter4.html">Chapter 4</a>
+                <a href="chapter5.html">Chapter 5</a>
+                <a href="chapter6.html">Chapter 6</a>
+                <a href="chapter7.html">Chapter 7</a>
+                <a href="chapter8.html">Chapter 8</a>
+                <a href="chapter9.html">Chapter 9</a>
+                <a href="chapter10.html">Chapter 10</a>
+                <a href="chapter11.html">Chapter 11</a>
+                <a href="chapter12.html">Chapter 12</a>
+                <a href="chapter13.html">Chapter 13</a>
+                <a href="chapter14.html">Chapter 14</a>
+                <a href="chapter15.html">Chapter 15</a>
+                <a href="chapter16.html">Chapter 16</a>
+                <a href="chapter17.html">Chapter 17</a>
+                <a href="quiz.html">Quiz</a>
+                <div class="search-container">
+                <form action="/action_page.php">
+                    <input type="text" placeholder="Search.." name="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+                </div>
             </div>
-        </div>
-        <div class="title"><h1>Chapter 4: Social Engineering & Password Attacks</h1></div>
-        <div class="parD"><p><mark style="background-color: #a75454; color: white;">(Domains: 2.2, 2.4)</mark></p></div>
-    
-    <button type="button" class="collapsible"><h2>Social Engineering & Human Vectors</h2></button>
-        <div class="content">
-            <p>Practice manipulating people through a variety of strategies to accomplish desired actions.</p>
-            <hr class="bor">
-            <div class="title3"><h3>Principles</h3></div>
-            <hr class="bor">
-            <ul>
-                <li><b>Authority:</b> The fact that most people will obey someone who appears to be in charge or knowledgeable.</li>
-                <li><b>Intimidation:</b> Relies on bullying an individual into taking a desired action.</li>
-                <li><b>Consensus-based:</b> The fact that people want to do what everyone else is doing and using that as a form of persuasion.</li>
-                <li><b>Scarcity:</b> The situation that something looks desirable because it may be the last one.</li>
-                <li><b>Familiarity-based:</b> Relies on the victim liking the social engineer or what they claim to represent.</li>
-                <li><b>Trust:</b> Relies on the connection between the social engineer and the target.</li>
-                <li><b>Urgency:</b> Relies on the idea that an action needs to be done asap.</li>
-            </ul>
-            <hr class="bor">
-            <div class="title3"><h3>Techniques</h3></div>
-            <hr class="bor">
-            <ul>
-                <li>Phishing</li>
-                <li>Vishing</li>
-                <li><b>Smishing:</b> Phishing through SMS.</li>
-                <li><b>Spear phishing:</b> phishing a specific target.</li>
-                <li><b>Whaling:</b> phishing a target with a high status.</li>
-                <li><b>Misinformation and Disinformation</b></li>
+            <div class="title"><h1>Chapter 4: Social Engineering & Password Attacks</h1></div>
+            <div class="parD"><p><mark style="background-color: #a75454; color: white;">(Domains: 2.2, 2.4)</mark></p></div>
+        
+        <button type="button" class="collapsible"><h2>Social Engineering & Human Vectors</h2></button>
+            <div class="content">
+                <p>Practice manipulating people through a variety of strategies to accomplish desired actions.</p>
+                <hr class="bor">
+                <div class="title3"><h3>Principles</h3></div>
+                <hr class="bor">
                 <ul>
-                    <li><b>Misinformation:</b> Incorrect information from getting facts wrong.</li>
-                    <li><b>Disinformation:</b> Incorrect, inaccurate, or false information that serves a goal.</li>
-                    <li><b>Malinformation:</b> Facts that are out of context.</li>
-                    <li><b>CISA 5 steps of TRUST to counter misinformation and disinformation:</b></li>
+                    <li><b>Authority:</b> The fact that most people will obey someone who appears to be in charge or knowledgeable.</li>
+                    <li><b>Intimidation:</b> Relies on bullying an individual into taking a desired action.</li>
+                    <li><b>Consensus-based:</b> The fact that people want to do what everyone else is doing and using that as a form of persuasion.</li>
+                    <li><b>Scarcity:</b> The situation that something looks desirable because it may be the last one.</li>
+                    <li><b>Familiarity-based:</b> Relies on the victim liking the social engineer or what they claim to represent.</li>
+                    <li><b>Trust:</b> Relies on the connection between the social engineer and the target.</li>
+                    <li><b>Urgency:</b> Relies on the idea that an action needs to be done asap.</li>
+                </ul>
+                <hr class="bor">
+                <div class="title3"><h3>Techniques</h3></div>
+                <hr class="bor">
+                <ul>
+                    <li>Phishing</li>
+                    <li>Vishing</li>
+                    <li><b>Smishing:</b> Phishing through SMS.</li>
+                    <li><b>Spear phishing:</b> phishing a specific target.</li>
+                    <li><b>Whaling:</b> phishing a target with a high status.</li>
+                    <li><b>Misinformation and Disinformation</b></li>
                     <ul>
-                        <li>Tell your story.</li>
-                        <li>Ready your Team.</li>
-                        <li>Understand and assess MDM.</li>
-                        <li>Strategize response.</li>
-                        <li>Track outcomes.</li>
+                        <li><b>Misinformation:</b> Incorrect information from getting facts wrong.</li>
+                        <li><b>Disinformation:</b> Incorrect, inaccurate, or false information that serves a goal.</li>
+                        <li><b>Malinformation:</b> Facts that are out of context.</li>
+                        <li><b>CISA 5 steps of TRUST to counter misinformation and disinformation:</b></li>
+                        <ul>
+                            <li>Tell your story.</li>
+                            <li>Ready your Team.</li>
+                            <li>Understand and assess MDM.</li>
+                            <li>Strategize response.</li>
+                            <li>Track outcomes.</li>
+                        </ul>
+                    </ul>
+                    <li>Impersonation</li>
+                    <li><b>Business Email Compromises (BEC):</b> Relies on using apparently legitimate email addresses to conduct scams and other attacks:</li>
+                    <ul>
+                        <li>Using compromised accounts.</li>
+                        <li>Sending spoofed emails.</li>
+                        <li>Using common fake but similar domain techniques.</li>
+                        <li>Using malware or other tools.</li>
+                    </ul>
+                    <li><b>Pretexting:</b> Process of creating made up scenario to justify why an attacker is approaching the target.</li>
+                    <li><b>Watering Hole Attacks:</b> Targeting a frequently used website and attacking it.</li>
+                    <li><b>Brand Impersonation:</b> Also known as brand phishing or brand spoofing, it’s the impersonation of a brand’s email handle and email format.</li>
+                    <li><b>Typosquatting:</b> Use of misspelled and slightly similar to legitimate URLs.</li>
+                    <ul>
+                        <li><b>Pharming:</b> Relies on changing a system’s host file or active malware on the system that changes the system’s DNS servers.</li>
                     </ul>
                 </ul>
-                <li>Impersonation</li>
-                <li><b>Business Email Compromises (BEC):</b> Relies on using apparently legitimate email addresses to conduct scams and other attacks:</li>
+            </div>
+            <button type="button" class="collapsible"><h2>Password Attacks</h2></button>
+            <div class="content">
+                <b></b>
                 <ul>
-                    <li>Using compromised accounts.</li>
-                    <li>Sending spoofed emails.</li>
-                    <li>Using common fake but similar domain techniques.</li>
-                    <li>Using malware or other tools.</li>
+                    <li><b>Brute-force attacks:</b> Iterating through passwords until one works.</li>
+                    <li><b>Password Spraying attacks:</b> like brute-force but uses a single password or small set of passwords on multiple accounts.</li>
+                    <li><b>Dictionary attacks:</b> Like brute-force but uses a list of words for attempts.</li>
                 </ul>
-                <li><b>Pretexting:</b> Process of creating made up scenario to justify why an attacker is approaching the target.</li>
-                <li><b>Watering Hole Attacks:</b> Targeting a frequently used website and attacking it.</li>
-                <li><b>Brand Impersonation:</b> Also known as brand phishing or brand spoofing, it’s the impersonation of a brand’s email handle and email format.</li>
-                <li><b>Typosquatting:</b> Use of misspelled and slightly similar to legitimate URLs.</li>
-                <ul>
-                    <li><b>Pharming:</b> Relies on changing a system’s host file or active malware on the system that changes the system’s DNS servers.</li>
-                </ul>
-            </ul>
-        </div>
-        <button type="button" class="collapsible"><h2>Password Attacks</h2></button>
-        <div class="content">
-            <b></b>
-            <ul>
-                <li><b>Brute-force attacks:</b> Iterating through passwords until one works.</li>
-                <li><b>Password Spraying attacks:</b> like brute-force but uses a single password or small set of passwords on multiple accounts.</li>
-                <li><b>Dictionary attacks:</b> Like brute-force but uses a list of words for attempts.</li>
-            </ul>
-        </div>
+            </div>
+            
         
-    
 
 
 
@@ -362,27 +119,27 @@
 
 
 
-    <script>
-        var coll = document.getElementsByClassName("collapsible");
-        var i;
-        
-        for (i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var content = this.nextElementSibling;
-            if (content.style.display === "block") {
-                content.style.display = "none";
-            } else {
-                content.style.display = "block";
+        <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+            
+            for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
             }
-        });
-        }
-    </script>
-        <div style="display: flex; justify-content: space-between;margin-top: 40px;">
-        <i class="bi bi-arrow-left-circle" onclick="window.location.href='chapter3.html'"></i>
-        <i class="bi bi-arrow-right-circle" onclick="window.location.href='chapter5.html'"></i>
+        </script>
+            <div style="display: flex; justify-content: space-between;margin-top: 40px;">
+            <i class="bi bi-arrow-left-circle" onclick="window.location.href='chapter3.html'"></i>
+            <i class="bi bi-arrow-right-circle" onclick="window.location.href='chapter5.html'"></i>
 
+            </div>
         </div>
-    </div>
-</body>
-</html>
+    </body>
+    </html>
