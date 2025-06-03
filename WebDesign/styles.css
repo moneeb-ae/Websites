@@ -144,7 +144,7 @@
         box-sizing: border-box;
     }
 
-    *:not(html):not(body):not(.background) {
+    *:not(html):not(body):not(.background):not(table):not(tr:nth-child(even)) {
     border-radius: 15px;
     
 }
