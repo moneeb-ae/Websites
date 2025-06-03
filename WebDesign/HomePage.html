@@ -4,83 +4,217 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HomePage</title>
-    <style>
-        body {
-            margin: 0;
-    }
-
-    .background {
-        background-color: #1f6f8c;
-        color: black;
-        font-size: 50px;
-        padding: 50px;
-    }
-
-    .title{
-        color: white;
-        text-align: center;
-        font-size: 40px;
-    }
-
-    .border{
-        border: 6px solid  #fe966e;
-    }
-
-    .button-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px; /* space between buttons */
-        margin-top: 20px;
-    }
-
-    .but{
-        background-color: rgb(15, 147, 218);
-        color: rgb(249, 249, 252);
-        font-size:30px;
-        padding:20px, 40px;
-        border: 1.5px black solid;
-        transition-duration: 0.4s;
-        
-        display: block;
-    }
-
-    .but:hover {
-        background-color: #fe966e;
-        color: rgb(253, 252, 252);
-        font-size: 40px;
-        padding: 20px, 40px;
-    }
-
-    </style>
+    <link rel="stylesheet" href="styles.css"> 
 </head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    .column
+    {
+    width: 25%;
+    padding: 10px;
+    display: flex;
+    }
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+@media screen and (max-width: 600px) {
+.column {
+    width: 100%;
+    margin-bottom: 20px;
+    }
+}
+.card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: rgb(15, 147, 218);
+    color: rgb(253, 252, 252);
+}
+.card:hover {
+        background-color: #a75454;
+        color: rgb(253, 252, 252);
+}
+</style>
 <body>
     <div class="background">
+        <div class="topnav">
+                <a href="HomePage.html">Home</a>
+                <a href="chapter1.html">Chapter 1</a>
+                <a href="chapter2.html">Chapter 2</a>
+                <a href="chapter3.html">Chapter 3</a>
+                <a href="chapter4.html">Chapter 4</a>
+                <a href="chapter5.html">Chapter 5</a>
+                <a href="chapter6.html">Chapter 6</a>
+                <a href="chapter7.html">Chapter 7</a>
+                <a href="chapter8.html">Chapter 8</a>
+                <a href="chapter9.html">Chapter 9</a>
+                <a href="chapter10.html">Chapter 10</a>
+                <a href="chapter11.html">Chapter 11</a>
+                <a href="chapter12.html">Chapter 12</a>
+                <a href="chapter13.html">Chapter 13</a>
+                <a href="chapter14.html">Chapter 14</a>
+                <a href="chapter15.html">Chapter 15</a>
+                <a href="chapter16.html">Chapter 16</a>
+                <a href="chapter17.html">Chapter 17</a>
+                <a href="quiz.html">Quiz</a>
+                <div class="search-container">
+                <form action="/action_page.php">
+                    <input type="text" placeholder="Search.." name="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+                </div>
+        </div>
         <div class="title"><h1>Security+ Notes</h1></div>
         <div class="border">
             <div class="title"><h2><u>Choose a chapter:</u></h2></div>
-            <div class="button-container">
-                <button class="but" onclick="window.location.href='chapter1.html'">Chapter 1: Today's Security Professionals</button>
-                <button class="but"onclick="window.location.href='chapter2.html'">Chapter 2: Cybersecurity Threat Landscape</button>
-                <button class="but"onclick="window.location.href='chapter3.html'">Chapter 3: Malicious Code</button>
-                <button class="but"onclick="window.location.href='chapter4.html'">Chapter 4: Social Engineering & Password Attacks</button>
-                <button class="but"onclick="window.location.href='chapter5.html'">Chapter 5: Security Assessment & Testing</button>
-                <button class="but"onclick="window.location.href='chapter6.html'">Chapter 6: Application Security</button>
-                <button class="but"onclick="window.location.href='chapter7.html'">Chapter 7: Cryptography & the PKI</button>
-                <button class="but"onclick="window.location.href='chapter8.html'">Chapter 8: Identity & Access Management</button>
-                <button class="but"onclick="window.location.href='chapter9.html'">Chapter 9: Resilience & Physical Security</button>
-                <button class="but"onclick="window.location.href='chapter10.html'">Chapter 10: Cloud & Virtualization Security</button>
-                <button class="but"onclick="window.location.href='chapter11.html'">Chapter 11: Endpoint Security</button>
-                <button class="but"onclick="window.location.href='chapter12.html'">Chapter 12: Network Security</button>
-                <button class="but"onclick="window.location.href='chapter13.html'">Chapter 13: Wireless & Mobile Security</button>
-                <button class="but"onclick="window.location.href='chapter14.html'">Chapter 14: Monitoring & Incident Response</button>
-                <button class="but"onclick="window.location.href='chapter15.html'">Chapter 15: Digital Forensics</button>
-                <button class="but"onclick="window.location.href='chapter16.html'">Chapter 16: Security Governance & Compliance</button>
-                <button class="but"onclick="window.location.href='chapter17.html'">Chapter 17: Risk Management & Privacy</button>
-                <button class="but"onclick="window.location.href='quiz.html'">Quiz</button>
+            <div class="row">
+                <div class="column">
+                    <div class="card" onclick="window.location.href='chapter1.html'">
+                        <h2>Chapter 1</h2>
+                        <p>Today's Security Professionals</p>
+                    </div>
+                </div>
+            <div class="column">
+                <div class="card"  onclick="window.location.href='chapter2.html'">
+                    <h2>Chapter 2</h2>
+                    <p>Cybersecurity Threat Landscape</p>
+                </div>
             </div>
+            <div class="column">
+                <div class="card" onclick="window.location.href='chapter3.html'">
+                    <h2>Chapter 3</h2>
+                    <p>Malicious Code</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card"  onclick="window.location.href='chapter4.html'">
+                    <h2>Chapter 4</h2>
+                    <p>Social Engineering & Password Attacks</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card" onclick="window.location.href='chapter5.html'">
+                    <h2>Chapter 5</h2>
+                    <p>Security Assessment & Testing</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card"  onclick="window.location.href='chapter6.html'">
+                    <h2>Chapter 6</h2>
+                    <p>Application Security</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card"  onclick="window.location.href='chapter7.html'">
+                    <h2>Chapter 7</h2>
+                    <p>Cryptography & the PKI</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card"   onclick="window.location.href='chapter8.html'">
+                    <h2>Chapter 8</h2>
+                    <p>Identity & Access Management</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card" onclick="window.location.href='chapter9.html'">
+                    <h2>Chapter 9</h2>
+                    <p>Resilience & Physical Security</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card"  onclick="window.location.href='chapter10.html'">
+                    <h2>Chapter 10</h2>
+                    <p>Cloud & Virtualization Security</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card"  onclick="window.location.href='chapter11.html'">
+                    <h2>Chapter 11</h2>
+                    <p>Endpoint Security</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card"  onclick="window.location.href='chapter12.html'">
+                    <h2>Chapter 12</h2>
+                    <p>Network Security</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card"   onclick="window.location.href='chapter13.html'">
+                    <h2>Chapter 13</h2>
+                    <p>Wireless & Mobile Security</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card"   onclick="window.location.href='chapter14.html'">
+                    <h2>Chapter 14</h2>
+                    <p>Monitoring & Incident Response</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card"  onclick="window.location.href='chapter15.html'">
+                    <h2>Chapter 15</h2>
+                    <p>Digital Forensics</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card"   onclick="window.location.href='chapter16.html'">
+                    <h2>Chapter 16</h2>
+                    <p>Security Governance & Compliance</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card"   onclick="window.location.href='chapter17.html'">
+                    <h2>Chapter 17</h2>
+                    <p>Risk Management & Privacy</p>
+                </div>
+            </div>
+</div>
 
         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+            
+            for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+            }
+        </script>
     </div>
 </body>
 </html>
