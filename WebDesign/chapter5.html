@@ -335,12 +335,76 @@ tr {
                                 <td>Changed (C)</td>
                                 <td>The exploited vulnerability can affect resources beyond the scope of the security authority managing the component containing the vulnerability.</td>
                             </tr>
-
                         </table>
                     </div>
                         <div class="image" style="flex: 0 0 auto;">
                                 <img src="Sec+ Images/Nessus Vulnerability Scan Report.jpg" style="width: 1000px; height: auto;">
                             </div>
+                </div>
+                <div>
+                        <p>Each metric will have a score listed. All the scores are calculated and added up to show the severity of a vulnerability.</p>
+                        <b>Calculationg the Impact Sub-Score (ISS):</b>
+                        <ul>
+                            <li>ISS = 1 – [(1-Confidentiality) *(1-Integrity) *(1-Availability)]</li>
+                        </ul>
+                        <b>Calculating the Impact Score:</b>
+                        <ul>
+                            <li>If the Scope metric (S) is unchanged: Impact = ISS * 6.42</li>
+                            <li>If the Scope metric (S) is changed: Impact = 7.52 * (ISS – 0.029) – 3.25 * (ISS – 0.02)<sup>15</sup></li>
+                        </ul>
+                        <b>Calculating the Exploitability Score:</b>
+                        <ul>
+                            <li>Exploitability = 8.22 * Attack Vector * Attack Complexity * Privileges Required * User Interaction</li>
+                        </ul>
+                        <b>Calculating the Base Score:</b>
+                        <ul>
+                            <li>If the impact i s0, the base score is 0</li>
+                            <li>If the scope metric is Unchanged: the base score is Impact + Exploitability scores.</li>
+                            <li>If the scope metric is Changed: (Impact + Exploitability) * 1.08</li>
+                            <li> The highest base score is 10. If the calculated value is greater than 10, set the base score to 10.</li>
+                        </ul>
+                        <div style="text-align: center;"><b>Categorizing CVSS Base Scores:</b></div>
+                        <table>
+                            <tr>
+                                <th>CVSS Score:</th>
+                                <th>Rating:</th>
+                            </tr>
+                            <tr>
+                                <td>0.0</td>
+                                <td>None</td>
+                            </tr>
+                            <tr>
+                                <td>0.1-3.9</td>
+                                <td>Low</td>
+                            </tr>
+                            <tr>
+                                <td>4.0-6.9</td>
+                                <td>Medium</td>
+                            </tr>
+                            <tr>
+                                <td>7.0-8.9</td>
+                                <td>High</td>
+                            </tr>
+                            <tr>
+                                <td>9.0-10.0</td>
+                                <td>Critical</td>
+                            </tr>
+                        </table>
+                        <br>
+                </div>
+                <hr class="bor">
+                <div class="title3"><h3>Confirmation of Scan Results</h3></div>
+                <hr class="bor">
+                <div>
+                    <P>False positives can be caused by interference or by scanners not having sufficient access to the test subject.</P>
+                    <p><b>False Positive Error:</b> When a scanner reports a false positive (false report).</p>
+                    <p><b>Positive Error:</b> When a scanner reports an actual vulnerability (true report).</p>
+                    <P>To Reconcile scan results Cybersecurity analysts should investigate other sources while reviewing the report:</P>
+                    <ul>
+                        <li>Log Review from servers, applications, etc.</li>
+                        <li>Security Information and Event Management (SIEM)</li>
+                        <li>Configuration Management Systems</li>
+                    </ul>
                 </div>
             </div>
             <button type="button" class="collapsible"><h2>Vulnerability Classification</h2></button>
