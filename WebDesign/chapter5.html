@@ -16,8 +16,9 @@
 }
 
 th, td {
-    text-align: left;
+    text-align: center;
     padding: 16px;
+    color: rgb(255, 255, 255);
 }
 
 tr {
@@ -209,19 +210,132 @@ tr {
                             </tr>
                             <tr>
                                 <td>High (H)</td>
-                                <td>Exploting the vulnerability requires "specialized" conditions that would be difficult to find.</td>
-                                <td>0.44</td>
+                                <td>Attackers require administrative privileges to conduct the attack.</td>
+                                <td>0.27 (or 0.50 if scope is changed)</td>
                             </tr>
                             <tr>
                                 <td>Low (L)</td>
-                                <td>Exploting the vulnerability requires does not require any specialized conditions.</td>
-                                <td>0.77</td>
+                                <td>Attackers require basic user privileges to conduct the attack.</td>
+                                <td>0.62 (or 0.68 if scope is changed)</td>
                             </tr>
                             <tr>
                                 <td>None (N)</td>
-                                <td>Exploting the vulnerability requires does not require any specialized conditions.</td>
-                                <td>0.77</td>
+                                <td>Attackers do not need to authenticate to exploit the vulnerability.</td>
+                                <td>0.85</td>
                             </tr>
+                        </table>
+                        <br>
+                        <br>
+                        <div style="text-align: center;"><b>User Interaction Metric:</b></div>
+                        <table>
+                            <tr>
+                                <th>Value:</th>
+                                <th>Description:</th>
+                                <th>Score:</th>
+                            </tr>
+                            <tr>
+                                <td>None (N)</td>
+                                <td>Successful exploitation does not require action by any user other than the attackers.</td>
+                                <td>0.85</td>
+                            </tr>
+                            <tr>
+                                <td>Required (R)</td>
+                                <td>Successful exploitation does require action by any user other than the attackers.</td>
+                                <td>0.62</td>
+                            </tr>
+                        </table>
+                        <br>
+                        <br>
+                        <div style="text-align: center;"><b>Confidentiality Metric:</b></div>
+                        <table>
+                            <tr>
+                                <th>Value:</th>
+                                <th>Description:</th>
+                                <th>Score:</th>
+                            </tr>
+                            <tr>
+                                <td>None (N)</td>
+                                <td>There is no confidentiality Impact.</td>
+                                <td>0.00</td>
+                            </tr>
+                            <tr>
+                                <td>Low (L)</td>
+                                <td>Access to some information is possible, but the attacker does not have control over what information is compromised.</td>
+                                <td>0.22</td>
+                            </tr>
+                            <tr>
+                                <td>High (H)</td>
+                                <td>All information on the system is compromised.</td>
+                                <td>0.56</td>
+                            </tr>
+                        </table>
+                        <br>
+                        <br>
+                        <div style="text-align: center;"><b>Integrity Metric:</b></div>
+                        <table>
+                            <tr>
+                                <th>Value:</th>
+                                <th>Description:</th>
+                                <th>Score:</th>
+                            </tr>
+                            <tr>
+                                <td>None (N)</td>
+                                <td>There is no integrity Impact.</td>
+                                <td>0.00</td>
+                            </tr>
+                            <tr>
+                                <td>Low (L)</td>
+                                <td>Modification of some information is possible, but the attacker does not have control over what information is modified.</td>
+                                <td>0.22</td>
+                            </tr>
+                            <tr>
+                                <td>High (H)</td>
+                                <td>The integrity of the system is totally compromised and the attcker may change any information at will.</td>
+                                <td>0.56</td>
+                            </tr>
+                        </table>
+                        <br>
+                        <br>
+                        <div style="text-align: center;"><b>Availability Metric:</b></div>
+                        <table>
+                            <tr>
+                                <th>Value:</th>
+                                <th>Description:</th>
+                                <th>Score:</th>
+                            </tr>
+                            <tr>
+                                <td>None (N)</td>
+                                <td>There is no availability Impact.</td>
+                                <td>0.00</td>
+                            </tr>
+                            <tr>
+                                <td>Low (L)</td>
+                                <td>The performance of the system is degraded.</td>
+                                <td>0.22</td>
+                            </tr>
+                            <tr>
+                                <td>High (H)</td>
+                                <td>The systems is completely shut down.</td>
+                                <td>0.56</td>
+                            </tr>
+                        </table>
+                        <br>
+                        <br>
+                        <div style="text-align: center;"><b>Scope Metric:</b></div>
+                        <table>
+                            <tr>
+                                <th>Value:</th>
+                                <th>Description:</th>
+                            </tr>
+                            <tr>
+                                <td>Unchanged (U)</td>
+                                <td>The exploited vulnerability can only affect resources managed by the same security authority.</td>
+                            </tr>
+                            <tr>
+                                <td>Changed (C)</td>
+                                <td>The exploited vulnerability can affect resources beyond the scope of the security authority managing the component containing the vulnerability.</td>
+                            </tr>
+
                         </table>
                     </div>
                         <div class="image" style="flex: 0 0 auto;">
